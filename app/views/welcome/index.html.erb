@@ -1,1 +1,35 @@
-<h1>Hello, Rails!</h1>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Hello, World</title>
+    </head>
+    <body>
+        <h1> Hello, Rails!</h1>
+            <p id=NY></p>
+            <p id=CO></p>
+            <p id=CA></p>
+        
+        <footer>
+            <script>
+                var date = new Date();
+                var h = date.getHours();
+                var m = date.getMinutes();
+                var s = date.getSeconds();
+                document.getElementById("NY").innerHTML = "Time in New York: " +h + ":" + m + ":" + s;
+                
+                if(h-2<0)
+                    {
+                        h=0; 
+                    }
+                document.getElementById("CO").innerHTML = "Time in Colorado: " +(h-2) + ":" + m + ":" + s;
+                
+                if (h-3<0)
+                    {
+                        h=0; 
+                    }
+                document.getElementById("CA").innerHTML = "Time in California: " +(h-3) + ":" + m + ":" + s;   
+            </script>
+        </footer>
+    </body>
+</html>
