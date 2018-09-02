@@ -14,22 +14,45 @@
             <script>
                 var date = new Date();
                 var h = date.getHours();
+                if (h == 0)
+                    {
+                        h = "00";
+                    }
                 var m = date.getMinutes();
                 var s = date.getSeconds();
                 document.getElementById("NY").innerHTML = "Time in New York: " +h + ":" + m + ":" + s;
                 
                 if(h-2<0)
                     {
-                        h=0; 
+                        if (h-2 == -2)
+                            {
+                                h=22;
+                            }
+                        else if (h-2 == -1)
+                            {
+                                h = 23;
+                            }
                     }
                 document.getElementById("CO").innerHTML = "Time in Colorado: " +(h-2) + ":" + m + ":" + s;
                 
                 if (h-3<0)
                     {
-                        h=0; 
+                        if (h-3 == -3)
+                            {
+                                h=21;
+                            }
+                        else if (h-3 == -2)
+                            {
+                                h = 22;
+                            }
+                        else if (h-3 == -3)
+                            {
+                                h = 23
+                            }
                     }
                 document.getElementById("CA").innerHTML = "Time in California: " +(h-3) + ":" + m + ":" + s;   
             </script>
+            <script>time.current();</script>
         </footer>
     </body>
 </html>
